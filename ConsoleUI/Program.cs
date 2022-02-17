@@ -9,9 +9,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            
+
             //CategoryTestMethod();
-            ProductTestMethod(new ProductManager(new EFProductDal()));
+            ProductTestMethod();
         }
 
         private static void CategoryTestMethod()
@@ -21,21 +21,30 @@ namespace ConsoleUI
             {
                 Console.WriteLine(category.CategoryName + " " + category.CategoryId);
             }
-           
+
         }
 
-        private static void ProductTestMethod(ProductManager productManager)
+        private static void ProductTestMethod()
         {
-            foreach (var product in productManager.GetProductDetaiils())
+            ProductManager productManager = new ProductManager(new EFProductDal());
+            var result = productManager.GetProductDetaiils();
+            if (result.Success)
             {
-                Console.WriteLine(product.ProductName + " / " + product.CategoryName);
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.ProductName + " / " + product.CategoryName);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
 
         private static ProductManager NewMethod()
         {
             ProductManager productManager = new ProductManager(new EFProductDal());
-            foreach (var product in productManager.GetAll())
+            foreach (var product in productManager.GetAll().Data)
             {
                 Console.WriteLine(product.ProductName);
             }
