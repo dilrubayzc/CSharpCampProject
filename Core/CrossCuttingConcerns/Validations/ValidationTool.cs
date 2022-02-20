@@ -9,8 +9,8 @@ namespace Core.CrossCuttingConcerns.Validations
             var context = new ValidationContext<object>(obj);
             var result = validator.Validate(context);
             
-            if (!result.IsValid)
-                throw new ValidationException(result.Errors);
+            //if (!result.IsValid)
+            //    throw new ValidationException(result.Errors);
         }
     }
 }
