@@ -16,11 +16,11 @@ namespace ConsoleUI
 
         private static void CategoryTestMethod()
         {
-            CategoryManager categoryManager = new CategoryManager(new EFCategoryDal());
-            foreach (var category in categoryManager.GetAll())
-            {
-                Console.WriteLine(category.CategoryName + " " + category.CategoryId);
-            }
+            //CategoryManager categoryManager = new CategoryManager(new EFCategoryDal());
+            //foreach (var category in categoryManager.GetAll())
+            //{
+            //    Console.WriteLine(category.CategoryName + " " + category.CategoryId);
+            //}
 
         }
 

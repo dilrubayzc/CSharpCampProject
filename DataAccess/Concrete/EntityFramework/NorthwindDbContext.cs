@@ -13,6 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server = DG-DYAZICI\SQLEXPRESS; Database = Northwind;Integrated Security=true");
+            optionsBuilder.EnableSensitiveDataLogging();
         }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }

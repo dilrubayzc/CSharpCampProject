@@ -12,6 +12,5 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EFCategoryDal : EfEntityRepositoryBase<Category,NorthwindDbContext>,ICategoryDal
     {
-       
     }
 }
